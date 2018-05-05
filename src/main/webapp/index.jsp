@@ -5,9 +5,7 @@
 </head>
 <body>
 
-<h1>Hello from JSP file!</h1>
-
-<h2><%= request.getAttribute("model") %></h2>
+<h1>LMS ебись он провалилсь..</h1>
 
 </body>
 </html>
