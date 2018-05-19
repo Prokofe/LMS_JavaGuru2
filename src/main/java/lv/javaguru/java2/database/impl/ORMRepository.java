@@ -1,4 +1,4 @@
-package lv.javaguru.java2.database.orm;
+package lv.javaguru.java2.database.impl;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
