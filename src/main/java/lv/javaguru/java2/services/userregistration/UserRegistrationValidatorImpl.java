@@ -41,11 +41,36 @@ class UserRegistrationValidatorImpl implements UserRegistrationValidator {
         }
     }
 
+    private Optional<Error> validateEmail(String email) {
+        if (email == null || email.isEmpty()) {
+            return Optional.of(new Error("email", "Must not be empty"));
+        } else if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+            return Optional.of(new Error("email", "Wrong email format"));
+        } else
+            return Optional.empty();
+    }
+
+    private Optional<Error> validateAddress(String address) {
+        if (address == null || address.isEmpty()) {
+            return Optional.of(new Error("address", "Must not be empty"));
+        } else {
+            return Optional.empty();
+        }
+    }
+
+    private Optional<Error> validatePhone(String phone) {
+        if (phone == null || phone.isEmpty()) {
+            return Optional.of(new Error("phone", "Must not be empty"));
+        } else {
+            return Optional.empty();
+        }
+    }
+
     private Optional<Error> validateDuplicateLogin(String login) {
         if (login != null && !login.isEmpty()) {
             Optional<User> userOpt = userRepository.findByLogin(login);
             if (userOpt.isPresent()) {
-                return Optional.of(new Error("login", "Must not be repeated"));
+                return Optional.of(new Error("login", "There's already registered with that name"));
             }
         }
         return Optional.empty();

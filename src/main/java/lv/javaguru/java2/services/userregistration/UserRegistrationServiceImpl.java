@@ -15,7 +15,8 @@ class UserRegistrationServiceImpl implements UserRegistrationService {
 
     @Autowired
     private UserRegistrationValidator validator;
-    @Autowired private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     @Transactional
