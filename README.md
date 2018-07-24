@@ -1,1 +1,3 @@
-"# LMS_JavaGuru2" 
+Registration and Login example
+
+Using Spring MVC, Hibarnate, MySQL, BootStrap
