@@ -36,7 +36,7 @@ public class RegistrationController {
         UserRegistrationResponse response = registrationService.register(request);
         if (!response.getErrors().isEmpty()) {
             for (Error error : response.getErrors()) {
-                model.addAttribute("error", "Error sukapidr");
+                model.addAttribute("error", "Error");
             }
             return "registration";
         } else {
